@@ -11,34 +11,35 @@ Interpretation: Program fundamentals are established, with strong progress in pr
 ## Maturity Score by NIST CSF Function (0–5)
 | CSF Function | Current Maturity | Target Maturity (12 months) | Trend |
 |---|---:|---:|---|
-| Identify | 3.4 | 4.2 | Improving |
-| Protect | 3.6 | 4.3 | Improving |
-| Detect | 2.9 | 4.0 | Needs Acceleration |
-| Respond | 3.7 | 4.2 | Stable-Improving |
-| Recover | 3.3 | 4.1 | Improving |
+| Identify | 3.17 | 4.36 | Improving |
+| Protect | 3.19 | 4.55 | Improving |
+| Detect | 2.74 | 4.38 | Needs Acceleration |
+| Respond | 2.83 | 4.34 | Needs Acceleration |
+| Recover | 2.79 | 4.37 | Needs Acceleration |
 
 ## Top 5 Risks (by residual score)
 | Risk ID | Risk Statement | Score | Status | Executive Action |
 |---|---|---:|---|---|
-| R-001 | Cloud storage misconfiguration exposes confidential data | 20 | Open | Fund guardrails-as-code and auto-remediation |
-| R-002 | Privileged access weaknesses allow unauthorized admin actions | 20 | Open | Accelerate PAM phase 2 |
-| R-004 | Patch SLA breaches on legacy infrastructure | 16 | Open | Enforce risk acceptance with CIO sign-off |
-| R-010 | Detection content lags emerging attacker techniques | 16 | Open | Add detection engineering sprint capacity |
-| R-003 | Logging gaps reduce forensic readiness | 15 | Open | Prioritize telemetry onboarding for crown jewels |
+| RISK-002 | Excessive privileged access increases the likelihood of unauthorized system changes and credential abuse. | 20 | Open | Accelerate PAM phase 2 and privileged recertification enforcement |
+| RISK-001 | Incomplete enterprise asset inventory leads to unmanaged attack surface and delayed incident response. | 16 | Mitigating | Complete CMDB integration and automated discovery coverage |
+| RISK-004 | Cloud logging gaps reduce detection coverage for suspicious control-plane and identity activity. | 16 | Mitigating | Prioritize cloud telemetry onboarding and mandatory logging guardrails |
+| RISK-008 | Missing vulnerability remediation SLAs allow exploitable weaknesses to persist in production. | 16 | Open | Enforce severity-based remediation SLAs with exception governance |
+| RISK-003 | Inconsistent MFA enforcement for legacy and service access paths allows avoidable account compromise. | 15 | Mitigating | Complete federation migration and conditional access enforcement |
 
 ## Control Coverage and Automation
-- **Implemented controls:** 17 / 32 (**53.1%**)  
-- **Controls in progress:** 14 / 32 (**43.8%**)  
-- **Not started:** 1 / 32 (**3.1%**)  
-- **Controls with high automation potential:** 14 / 32 (**43.8%**)
+- **Implemented controls:** 17 / 40 (**42.5%**)
+- **Controls in progress:** 14 / 40 (**35.0%**)
+- **Not started:** 5 / 40 (**12.5%**)
+- **Needs review:** 4 / 40 (**10.0%**)
+- **Controls with high automation potential:** 14 / 40 (**35.0%**)
 
 ## Operational Metrics
-- **MTTD:** 6.8 hours (target: < 8h) ✅
-- **MTTR:** 18.4 hours (target: < 24h) ✅
-- **Open enterprise cyber risks:** 8
-- **Risk reduction trend:** Residual risk index improved from 61 (Nov 2025) to 48 (Apr 2026)
+- **MTTD:** 7.6 hours (target: < 8h) ✅
+- **MTTR:** 18.9 hours (target: < 24h) ✅
+- **Active enterprise cyber risks (Open + Mitigating):** 12
+- **Risk reduction trend:** Open risks decreased from 14 (2026-01) to 10 (2026-04)
 
 ## Leadership Notes
-1. Detection maturity is the primary program bottleneck and requires sustained engineering capacity.
-2. IAM and PAM completion will materially reduce top residual risk exposure.
-3. Recovery testing quality has improved; next focus is evidence quality for audit defensibility.
+1. Detection and recovery maturity remain below target and require sustained engineering capacity.
+2. PAM, vulnerability SLA governance, and cloud logging completion will materially reduce top residual risk exposure.
+3. Recovery testing quality has improved; next focus is evidence quality and closure cadence for corrective actions.
