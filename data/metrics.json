@@ -1,54 +1,108 @@
 {
-  "reporting_date": "2026-04-25",
-  "kpis": {
-    "mttd_hours": 6.8,
-    "mttr_hours": 18.4,
-    "control_coverage_percent": 53.1,
-    "controls_automated_percent": 43.8,
-    "open_risks_count": 8
-  },
-  "control_status_breakdown": {
-    "implemented": 17,
-    "in_progress": 14,
-    "not_started": 1,
-    "total_controls": 32
-  },
-  "risk_reduction_trend": [
+  "reporting_period": "2026-Q2",
+  "total_controls": 40,
+  "implemented_controls": 17,
+  "in_progress_controls": 14,
+  "not_started_controls": 5,
+  "needs_review_controls": 4,
+  "control_coverage_percent": 42.5,
+  "automated_controls_percent": 35.0,
+  "mttd_hours": 7.6,
+  "mttr_hours": 18.9,
+  "open_risks": 12,
+  "mitigated_risks": 2,
+  "accepted_risks": 1,
+  "average_maturity_current": 2.96,
+  "average_maturity_target": 4.41,
+  "top_risks": [
     {
-      "month": "2025-11",
-      "inherent_risk_index": 74,
-      "residual_risk_index": 61
+      "risk_id": "RISK-002",
+      "risk_score": 20,
+      "status": "Open",
+      "summary": "Excessive privileged access increases the likelihood of unauthorized system changes and credential abuse."
     },
     {
-      "month": "2025-12",
-      "inherent_risk_index": 73,
-      "residual_risk_index": 58
+      "risk_id": "RISK-001",
+      "risk_score": 16,
+      "status": "Mitigating",
+      "summary": "Incomplete enterprise asset inventory leads to unmanaged attack surface and delayed incident response."
     },
+    {
+      "risk_id": "RISK-004",
+      "risk_score": 16,
+      "status": "Mitigating",
+      "summary": "Cloud logging gaps reduce detection coverage for suspicious control-plane and identity activity."
+    },
+    {
+      "risk_id": "RISK-008",
+      "risk_score": 16,
+      "status": "Open",
+      "summary": "Missing vulnerability remediation SLAs allow exploitable weaknesses to persist in production."
+    },
+    {
+      "risk_id": "RISK-003",
+      "risk_score": 15,
+      "status": "Mitigating",
+      "summary": "Inconsistent MFA enforcement for legacy and service access paths allows avoidable account compromise."
+    }
+  ],
+  "maturity_by_function": {
+    "Identify": {
+      "average_current": 3.17,
+      "average_target": 4.36
+    },
+    "Protect": {
+      "average_current": 3.19,
+      "average_target": 4.55
+    },
+    "Detect": {
+      "average_current": 2.74,
+      "average_target": 4.38
+    },
+    "Respond": {
+      "average_current": 2.83,
+      "average_target": 4.34
+    },
+    "Recover": {
+      "average_current": 2.79,
+      "average_target": 4.37
+    }
+  },
+  "monthly_risk_reduction_trend": [
     {
       "month": "2026-01",
-      "inherent_risk_index": 72,
-      "residual_risk_index": 56
+      "open_risks": 14
     },
     {
       "month": "2026-02",
-      "inherent_risk_index": 71,
-      "residual_risk_index": 53
+      "open_risks": 13
     },
     {
       "month": "2026-03",
-      "inherent_risk_index": 70,
-      "residual_risk_index": 51
+      "open_risks": 12
     },
     {
       "month": "2026-04",
-      "inherent_risk_index": 69,
-      "residual_risk_index": 48
+      "open_risks": 10
     }
   ],
-  "service_level_targets": {
-    "critical_patch_sla_days": 14,
-    "high_patch_sla_days": 30,
-    "mttd_target_hours": 8,
-    "mttr_target_hours": 24
-  }
+  "monthly_control_coverage_trend": [
+    {
+      "month": "2026-01",
+      "implemented_percent": 37.5
+    },
+    {
+      "month": "2026-02",
+      "implemented_percent": 40.0
+    },
+    {
+      "month": "2026-03",
+      "implemented_percent": 42.5
+    },
+    {
+      "month": "2026-04",
+      "implemented_percent": 45.0
+    }
+  ],
+  "executive_summary": "The security program shows steady maturation with 45.0% of controls implemented and 30.0% actively in progress. Detection and recovery capabilities remain the primary investment areas, driven by cloud telemetry onboarding, playbook testing, and backup recovery validation. Risk posture improved month-over-month as two risks were fully mitigated, but elevated exposure persists around privileged access, vulnerability remediation SLAs, and cloud logging coverage."
 }
