@@ -1,0 +1,54 @@
+{
+  "reporting_date": "2026-04-25",
+  "kpis": {
+    "mttd_hours": 6.8,
+    "mttr_hours": 18.4,
+    "control_coverage_percent": 53.1,
+    "controls_automated_percent": 43.8,
+    "open_risks_count": 8
+  },
+  "control_status_breakdown": {
+    "implemented": 17,
+    "in_progress": 14,
+    "not_started": 1,
+    "total_controls": 32
+  },
+  "risk_reduction_trend": [
+    {
+      "month": "2025-11",
+      "inherent_risk_index": 74,
+      "residual_risk_index": 61
+    },
+    {
+      "month": "2025-12",
+      "inherent_risk_index": 73,
+      "residual_risk_index": 58
+    },
+    {
+      "month": "2026-01",
+      "inherent_risk_index": 72,
+      "residual_risk_index": 56
+    },
+    {
+      "month": "2026-02",
+      "inherent_risk_index": 71,
+      "residual_risk_index": 53
+    },
+    {
+      "month": "2026-03",
+      "inherent_risk_index": 70,
+      "residual_risk_index": 51
+    },
+    {
+      "month": "2026-04",
+      "inherent_risk_index": 69,
+      "residual_risk_index": 48
+    }
+  ],
+  "service_level_targets": {
+    "critical_patch_sla_days": 14,
+    "high_patch_sla_days": 30,
+    "mttd_target_hours": 8,
+    "mttr_target_hours": 24
+  }
+}

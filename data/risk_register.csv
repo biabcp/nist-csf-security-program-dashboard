@@ -1,0 +1,11 @@
+Risk ID,Risk Description,Related CSF Function,Related Control ID(s),Likelihood (1-5),Impact (1-5),Risk Score,Mitigation Strategy,Status,Owner
+R-001,Misconfigured cloud storage exposes confidential customer data.,Protect,PR-08;DE-04,4,5,20,"Implement CSPM guardrails, automated misconfiguration remediation, and weekly exception review.",Open,Cloud Security
+R-002,Incomplete privileged access controls allow unauthorized admin activity.,Protect,PR-01;PR-02;PR-03,4,5,20,"Accelerate PAM rollout, enforce JIT access, and complete quarterly recertifications.",Open,IAM Team
+R-003,Critical systems have logging gaps reducing forensic visibility.,Detect,DE-01;DE-06,3,5,15,Close log source onboarding backlog and deploy ingestion health alerts.,Open,SOC Engineering
+R-004,Legacy servers miss security patches beyond SLA windows.,Protect,PR-07;PR-06,4,4,16,Implement risk-based patch waves and executive escalation for overdue assets.,Open,Infrastructure Operations
+R-005,Third-party SaaS vendor lacks mature security controls.,Identify,ID-05,3,4,12,Issue remediation plan with contractual milestones and compensating controls.,Accepted,Third-Party Risk Office
+R-006,Ransomware attack could disrupt ERP operations for multiple days.,Recover,PR-12;RC-01;RC-02,3,5,15,"Harden backup isolation, increase recovery testing frequency, and validate restore integrity.",Mitigated,Business Continuity
+R-007,Insider threat detection capability is immature.,Detect,DE-05;DE-02,3,4,12,Deploy UEBA pilot and define high-risk behavioral analytics use cases.,Open,SOC Engineering
+R-008,Incident response communications are inconsistent across regions.,Respond,RS-01;RS-04;RC-03,2,4,8,Standardize communications playbooks and train regional crisis teams.,Open,Incident Response Lead
+R-009,Business services not fully mapped to supporting technical assets.,Identify,ID-01;ID-04,3,3,9,Complete CMDB/service map integration for tier-1 and tier-2 services.,Open,Enterprise Architecture
+R-010,Detection content lags new attacker techniques.,Detect,DE-02;DE-03,4,4,16,Adopt monthly detection engineering sprint cycle and purple-team validation.,Open,Detection Engineering

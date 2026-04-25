@@ -1,0 +1,33 @@
+Control ID,Control Name,Description,NIST CSF Function,Category/Subcategory,ISO 27001 Reference,Implementation Status,Control Owner,Evidence Link,Automation Potential
+ID-01,Enterprise Asset Inventory,"Maintain authoritative inventory of on-prem, cloud, and SaaS assets with ownership and criticality tags.",Identify,ID.AM-1,A.5.9,Implemented,IT Asset Management,https://evidence.example.com/id-01,High
+ID-02,Software Inventory (SBOM),Track approved software and package dependencies; generate SBOM for tier-1 systems.,Identify,ID.AM-2,A.8.9,In Progress,Application Security,https://evidence.example.com/id-02,High
+ID-03,Data Classification Standard,Classify data into Public/Internal/Confidential/Restricted with handling requirements.,Identify,ID.AM-5,A.5.12,Implemented,Data Governance,https://evidence.example.com/id-03,Medium
+ID-04,Business Context Register,"Document critical services, supporting systems, and impact tolerances.",Identify,ID.BE-4,A.5.30,Implemented,Enterprise Architecture,https://evidence.example.com/id-04,Low
+ID-05,Third-Party Risk Management,Assess supplier security posture pre-contract and annually thereafter.,Identify,ID.SC-1,A.5.19,In Progress,Third-Party Risk Office,https://evidence.example.com/id-05,Medium
+ID-06,Governance Policy Framework,"Maintain and review security policies, standards, and exceptions quarterly.",Identify,ID.GV-1,A.5.1,Implemented,GRC,https://evidence.example.com/id-06,Low
+PR-01,Identity Lifecycle Management,Automate joiner/mover/leaver workflows and periodic access recertification.,Protect,PR.AC-1,A.5.16,In Progress,IAM Team,https://evidence.example.com/pr-01,High
+PR-02,Privileged Access Management,"Vault, rotate, and monitor privileged credentials and sessions.",Protect,PR.AC-4,A.8.2,In Progress,IAM Team,https://evidence.example.com/pr-02,High
+PR-03,Multi-Factor Authentication,Enforce phishing-resistant MFA for workforce and administrative access.,Protect,PR.AC-7,A.8.5,Implemented,IAM Team,https://evidence.example.com/pr-03,High
+PR-04,Network Segmentation,"Segment production, user, and management networks with policy enforcement.",Protect,PR.AC-5,A.8.22,In Progress,Network Security,https://evidence.example.com/pr-04,Medium
+PR-05,Endpoint Hardening Baseline,Apply secure CIS-aligned baseline and drift detection for endpoints.,Protect,PR.IP-1,A.8.9,Implemented,Endpoint Engineering,https://evidence.example.com/pr-05,High
+PR-06,Vulnerability Management,Scan internal/external assets weekly and track SLA-based remediation.,Protect,PR.IP-12,A.8.8,Implemented,Vulnerability Management,https://evidence.example.com/pr-06,High
+PR-07,Patch Management,Deploy critical patches within 14 days and high-risk patches within 30 days.,Protect,PR.IP-12,A.8.8,In Progress,Infrastructure Operations,https://evidence.example.com/pr-07,High
+PR-08,Data Encryption at Rest,Encrypt production data stores and key management through centralized KMS.,Protect,PR.DS-1,A.8.24,Implemented,Cloud Platform Security,https://evidence.example.com/pr-08,Medium
+PR-09,Data Encryption in Transit,Require TLS 1.2+ for external/internal service communications.,Protect,PR.DS-2,A.8.24,Implemented,Platform Engineering,https://evidence.example.com/pr-09,Medium
+PR-10,Secure SDLC,"Embed threat modeling, SAST, dependency scanning, and security gates in CI/CD.",Protect,PR.IP-3,A.8.28,In Progress,Application Security,https://evidence.example.com/pr-10,High
+PR-11,Security Awareness Program,Run role-based awareness and phishing simulations with KPI reporting.,Protect,PR.AT-1,A.6.3,Implemented,Security Awareness Lead,https://evidence.example.com/pr-11,Medium
+PR-12,Backup Protection and Retention,Protect backup integrity and retention with immutable storage for critical workloads.,Protect,PR.IP-4,A.8.13,Implemented,Infrastructure Operations,https://evidence.example.com/pr-12,Medium
+DE-01,Centralized Log Management,"Aggregate logs from identity, endpoint, network, and cloud platforms.",Detect,DE.AE-3,A.8.15,Implemented,SOC Engineering,https://evidence.example.com/de-01,High
+DE-02,SIEM Use Case Library,Maintain prioritized detection use cases mapped to ATT&CK techniques.,Detect,DE.AE-1,A.8.16,In Progress,Detection Engineering,https://evidence.example.com/de-02,High
+DE-03,Endpoint Detection and Response,Deploy EDR to workforce and server fleet with tamper protection.,Detect,DE.CM-4,A.8.16,Implemented,SOC Operations,https://evidence.example.com/de-03,High
+DE-04,Cloud Security Monitoring,Enable CSPM and cloud-native audit logging for all production accounts.,Detect,DE.CM-1,A.5.23,In Progress,Cloud Security,https://evidence.example.com/de-04,High
+DE-05,User and Entity Behavior Analytics,Establish UEBA models for anomalous logins and data access patterns.,Detect,DE.AE-2,A.8.16,Not Started,SOC Engineering,https://evidence.example.com/de-05,Medium
+DE-06,Detection Health Monitoring,"Track log source health, ingestion latency, and parsing error rates.",Detect,DE.DP-4,A.8.15,In Progress,SOC Engineering,https://evidence.example.com/de-06,High
+RS-01,Incident Response Plan,"Maintain and test IR plan with defined roles, severity matrix, and escalation.",Respond,RS.RP-1,A.5.24,Implemented,Incident Response Lead,https://evidence.example.com/rs-01,Medium
+RS-02,Case Management Workflow,"Standardize triage, containment, eradication, and lessons learned process.",Respond,RS.MI-1,A.5.26,Implemented,SOC Operations,https://evidence.example.com/rs-02,Medium
+RS-03,Tabletop Exercise Program,Run quarterly cross-functional cyber tabletop exercises.,Respond,RS.IM-1,A.5.24,In Progress,Business Resilience,https://evidence.example.com/rs-03,Low
+RS-04,Regulatory/Breach Notification,Define notification decision tree and legal/comms playbooks.,Respond,RS.CO-3,A.5.31,In Progress,Legal & Compliance,https://evidence.example.com/rs-04,Low
+RC-01,Disaster Recovery Plan,Maintain DR strategy with RTO/RPO for tier-1 services.,Recover,RC.RP-1,A.5.30,Implemented,Business Continuity,https://evidence.example.com/rc-01,Medium
+RC-02,Recovery Testing Program,Execute semiannual recovery tests and track remediation actions.,Recover,RC.IM-1,A.5.30,In Progress,Business Continuity,https://evidence.example.com/rc-02,Medium
+RC-03,Crisis Communications,Define internal/external communications templates for major incidents.,Recover,RC.CO-1,A.5.5,Implemented,Corporate Communications,https://evidence.example.com/rc-03,Low
+RC-04,Post-Incident Improvement,Track corrective actions from incidents to closure in governance forum.,Recover,RC.IM-2,A.5.27,In Progress,GRC,https://evidence.example.com/rc-04,Medium
