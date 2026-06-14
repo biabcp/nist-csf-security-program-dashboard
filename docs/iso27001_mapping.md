@@ -1,7 +1,7 @@
 # ISO 27001 Light Crosswalk (NIST CSF Program)
 
 ## Scope and Intent
-This is a lightweight, practical mapping between the NIST CSF-aligned control catalog and ISO/IEC 27001:2022 Annex A themes. It is intended for portfolio alignment, not certification evidence by itself.
+This is a lightweight, practical mapping between the NIST CSF-aligned control catalog and ISO/IEC 27001:2022 Annex A themes. It is intended for program alignment, not certification evidence by itself.
 
 ## Crosswalk Highlights
 | NIST CSF Theme | Example Controls | ISO 27001 Reference (Light) | Notes |

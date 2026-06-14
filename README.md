@@ -1,31 +1,29 @@
-# NIST-CSF-Security-Program-Tracker
+# NIST CSF Security Program Dashboard
 
-An enterprise-grade portfolio project that shows how to run a cybersecurity program as a product, using the NIST Cybersecurity Framework (CSF) as the operating model and a lightweight ISO 27001 crosswalk for multi-framework reporting.
+A local Streamlit dashboard for internal cybersecurity program reporting using the NIST Cybersecurity Framework (CSF). The dashboard combines security posture metrics, maturity tracking, control ownership, risk prioritization, and operational resilience trends into one executive-facing view.
 
-## Security Program as a Product
-Traditional security programs often look like disconnected control checklists. This repository demonstrates a product-oriented model where controls, risks, metrics, and roadmap decisions are connected and measurable.
+The application is designed for security leadership, GRC, compliance, IT operations, and executive stakeholders who need a practical way to monitor program health and make risk-informed decisions.
 
-**Product characteristics in this project:**
-- Clear backlog and roadmap tied to CSF outcomes.
-- Quantified operational KPIs (MTTD, MTTR, coverage, risk trend).
-- Executive reporting focused on risk-reduction and resilience outcomes.
-- Continuous improvement loop from incidents and maturity assessments.
+## What the Dashboard Shows
 
-## Why NIST CSF Matters
-NIST CSF provides a practical way to organize enterprise security capabilities into five business-friendly functions:
-- **Identify** what matters and where risk lives.
-- **Protect** assets and data through preventive controls.
-- **Detect** threats quickly through telemetry and analytics.
-- **Respond** effectively to contain impact.
-- **Recover** critical services and institutionalize lessons learned.
+The Streamlit app (`streamlit_app.py`) reads the existing repository data and presents it as a realistic security program reporting tool:
 
-This functional model helps leadership fund and track security as an ongoing capability—not a one-time compliance exercise.
+- **Executive Overview:** posture score, reporting period, implemented controls, control coverage, open risks, MTTD, MTTR, and the executive summary from `data/metrics.json`.
+- **NIST CSF Maturity:** current vs. target maturity by CSF function with interpretation of the largest improvement gaps.
+- **Control Coverage:** implementation status counts, function/status filters, search, and a control table with ownership, automation potential, maturity scores, and KPIs.
+- **Risk Register:** top risks sorted by risk score, risk filters, heatmap-style likelihood/impact scatter plot, mitigation strategy, owner, target date, and status.
+- **Trends:** monthly open risk trend and monthly control coverage trend from `data/metrics.json`.
+- **Program Context:** explanation of how the dashboard supports governance, NIST CSF maturity tracking, control ownership, risk-based prioritization, evidence readiness, operational resilience, and executive reporting.
 
 ## Repository Architecture
 
 ```text
 NIST-CSF-Security-Program-Tracker/
+├── .streamlit/
+│   └── config.toml
 ├── README.md
+├── requirements.txt
+├── streamlit_app.py
 ├── data/
 │   ├── control_catalog.csv
 │   ├── control_catalog.json
@@ -42,61 +40,122 @@ NIST-CSF-Security-Program-Tracker/
     └── security_program_roadmap.md
 ```
 
-## What’s Included
+## Data Sources
 
-### 1) Control Catalog (`data/control_catalog.*`)
-A realistic set of 32 controls across all CSF functions with:
-- control ownership,
-- implementation status,
-- evidence references,
-- and automation potential.
+The dashboard uses these existing repository files:
 
-Available in both CSV (operations-friendly) and JSON (tooling/API-friendly).
+- `data/metrics.json` — reporting period, posture metrics, maturity by function, trend data, and executive summary.
+- `data/control_catalog.csv` — control records, CSF function mapping, implementation status, owners, maturity scores, automation potential, and KPIs.
+- `data/risk_register.csv` — risk descriptions, likelihood, impact, risk score, mitigation strategy, owner, target completion date, status, and residual risk.
+- `dashboard/executive_dashboard.md` — optional supporting context displayed in an expandable section. The app continues to run if this optional file is unavailable.
 
-### 2) Risk Register (`data/risk_register.csv`)
-A CSF-linked risk register with practical scenarios (cloud misconfiguration, IAM weaknesses, logging gaps, patching debt, detection lag). Risk scoring is quantified with a simple Likelihood × Impact model.
+## Quick Start
 
-### 3) Metrics (`data/metrics.json`)
-Operational KPIs used by security and leadership:
-- MTTD / MTTR,
-- control coverage,
-- automation percentage,
-- open risk count,
-- and multi-month risk reduction trend.
+### 1. Clone the repository
 
-### 4) Product Roadmap (`roadmap/security_program_roadmap.md`)
-CSF-aligned epics with initiatives written as user stories, including priorities and dependencies to reflect real delivery constraints.
+```bash
+git clone https://github.com/chrisfsolis/nist-csf-security-program-dashboard.git
+cd nist-csf-security-program-dashboard
+```
 
-### 5) Executive Dashboard (`dashboard/executive_dashboard.md`)
-Leadership-ready summary with posture score, maturity by function, top risks, and operational metrics.
+### 2. Create and activate a virtual environment
 
-### 6) Maturity Model (`maturity/maturity_model.md`)
-Defines a 0–5 maturity scale, current vs target state by CSF function, and practical gap analysis to guide investment planning.
+macOS/Linux:
 
-### 7) Framework Mapping (`docs/`)
-- `nist_csf_mapping.md`: explains control-to-CSF logic and operational use.
-- `iso27001_mapping.md`: lightweight crosswalk for ISO 27001 alignment conversations.
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
 
-## Example Use Cases
-- **GRC Program Management:** Track control rollout, owners, and maturity gaps.
-- **Audit Readiness:** Trace controls to evidence and governance cadence.
-- **Security Leadership Reporting:** Provide CISO-level posture updates with defensible metrics.
-- **Risk Committee Briefings:** Prioritize investments using quantified residual risk.
-- **Customer Assurance:** Reuse control records for NIST and ISO conversations.
+Windows PowerShell:
 
-## Mock Dashboard / Screenshot Concepts
-If this repo is extended into a web dashboard, typical views would include:
-1. **CISO Overview Page:** posture score, open risks, MTTD/MTTR trend tiles.
-2. **Control Operations Page:** implementation burn-up by CSF function.
-3. **Risk Heatmap:** top residual risks by likelihood/impact quadrant.
-4. **Maturity Progress View:** current vs target scores with quarterly trajectory.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
 
-## How to Extend This Project
-- Add automated data ingestion from ticketing (Jira/ServiceNow) and SIEM APIs.
-- Track KRIs/KPIs per business unit and critical service.
-- Add control testing outcomes and evidence freshness scoring.
-- Expand ISO mapping into full Statement of Applicability (SoA) alignment.
-- Build a front-end dashboard (e.g., Streamlit, Power BI, React) against the JSON/CSV data sources.
+### 3. Install dependencies
 
-## Portfolio Positioning
-This project is designed to showcase senior-level cybersecurity architecture and GRC leadership capability: strategy-to-execution traceability, measurable outcomes, and executive communication quality aligned to industry-recognized frameworks.
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the dashboard
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Streamlit will print a local URL, usually `http://localhost:8501`. Open that URL in a browser to view the dashboard.
+
+## Demo Runbook
+
+Use this runbook for a local walkthrough or internal program review.
+
+1. **Start the app**
+   ```bash
+   streamlit run streamlit_app.py
+   ```
+2. **Open the Executive Overview** and confirm the homepage immediately shows the posture score, reporting period, implemented controls, control coverage, open risks, MTTD, MTTR, and executive summary.
+3. **Review NIST CSF Maturity** to compare current and target scores by Identify, Protect, Detect, Respond, and Recover.
+4. **Review Control Coverage** using the NIST CSF function and implementation status filters. Search for a control owner, KPI, or control ID to narrow the table.
+5. **Review the Risk Register** by filtering status, owner, CSF function, and residual risk. Use the likelihood/impact scatter plot to identify high-priority risk concentrations.
+6. **Review Trends** to connect risk reduction and control implementation progress to monthly leadership reporting.
+7. **Close with Program Context** to explain how the dashboard supports governance, evidence readiness, operational resilience, and executive reporting.
+
+## Common Use Cases
+
+- **Security program governance:** Maintain a shared view of CSF-aligned capability maturity, control status, and risk exposure.
+- **GRC and compliance operations:** Track control ownership, implementation status, KPIs, and evidence readiness.
+- **Risk committee reporting:** Prioritize remediation based on risk score, residual risk, mitigation strategy, owner, and target completion.
+- **IT and security operations:** Connect operational metrics such as MTTD, MTTR, telemetry coverage, vulnerability remediation, and recovery testing to program outcomes.
+- **Executive reporting:** Provide a concise view of posture, maturity gaps, open risks, and trend direction without requiring stakeholders to inspect raw CSV or JSON files.
+
+## Troubleshooting
+
+### `streamlit` command not found
+
+Install dependencies in the active environment:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then run:
+
+```bash
+python -m streamlit run streamlit_app.py
+```
+
+### Blank page or data loading error
+
+Confirm the required files exist and are not empty:
+
+```bash
+python -m py_compile streamlit_app.py
+python - <<'PY'
+from pathlib import Path
+for path in ['data/metrics.json', 'data/risk_register.csv', 'data/control_catalog.csv']:
+    p = Path(path)
+    print(path, 'exists=', p.exists(), 'size=', p.stat().st_size if p.exists() else 0)
+PY
+```
+
+### CSV parsing error
+
+Open the referenced CSV and check for unescaped commas, missing headers, or partially edited rows. The dashboard validates required columns and shows a clear error if a required source is missing, malformed, or empty.
+
+### Port already in use
+
+Run Streamlit on a different port:
+
+```bash
+streamlit run streamlit_app.py --server.port 8502
+```
+
+## Development Notes
+
+- The app uses safe paths relative to the repository root; no absolute local paths are required.
+- Data loading is cached with Streamlit caching for responsive filtering and charting.
+- Dependencies are intentionally minimal: Streamlit, pandas, and Plotly.
+- The app is compatible with local Windows, macOS, Linux environments and Streamlit Community Cloud.
